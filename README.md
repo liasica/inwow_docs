@@ -79,10 +79,10 @@ multi_download     批量下载
     - `serial` 打印机序列号
     - `papers` 已打印纸张
     - `supplies` 耗材情况 `0`满 `1`少 `2`空 `3`未知
-        - `tray` 纸盒
-            - `tray1` 纸盒1
-            - `tray2` 纸盒2
-            - `tray3` 纸盒3
+        - `tray` 纸盒(数组, 分别代表纸盒1 - 3)
+            - 纸盒1
+            - 纸盒2
+            - 纸盒3
         - `toner` 粉盒
         - `drum` 感光鼓
         - `fixing` 维护套件（定影）
