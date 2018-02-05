@@ -59,7 +59,7 @@ multi_download     批量下载
     - `printing` 是否正在打印
     - `status` 当前状态 `0`正常 `1`其他（遇到错误） `2`状态未知 `3`空闲 `4`正在打印 `5`预热（处理打印队列或后台程序）
     - `errors` 错误列表, 只有当`status`为 `1` 的时候才会有此字段
-        - 格式为对象 `errcode => errinfo` (`string => string`)
+        - 格式为int数组
         - 错误列表:
             - 0:  `少纸`
             - 1:  `无纸`
@@ -98,9 +98,7 @@ multi_download     批量下载
             "normal": false,
             "printing": false,
             "status": 3,
-            "errors": {
-                "8": "进纸盒缺失"
-            },
+            "errors": [0, 2, 8],
             "serial": "40636C6601XCH",
             "papers": 796,
             "supplies": {
