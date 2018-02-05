@@ -153,7 +153,8 @@ multi_download     批量下载
 - 返回
      - `connedted` 是否连接
      - `normal` 是否可用
-     - `status` 当前错误状态 字符串, 查看`附录1照片打印机错误列表`
+     - `status` 当前错误状态 `int`, 查看`附录1照片打印机错误列表`
+        - `-1` 为照片打印机未找到或状态异常(附录中无)
      - `paper_remain` 剩余打印数量
      - `paper_printed` 已打印数量
      - `serial_no` 打印机序列号
@@ -168,7 +169,7 @@ multi_download     批量下载
         "data": {
             "connected": true,
             "normal": true,
-            "status": "Error_NoError",
+            "status": 0,
             "paper_remain": 179,
             "paper_printed": 129,
             "serial_no": "218699"
