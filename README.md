@@ -77,7 +77,7 @@ multi_download     批量下载
             - 13: `进纸盒已空`
             - 14: `定期保养已超时`
     - `serial` 打印机序列号
-    - `papers` 已打印纸张
+    - `paper_printed` 已打印纸张
     - `supplies` 耗材情况 `0`满 `1`少 `2`空 `3`未知
         - `tray` 纸盒(数组, 分别代表纸盒1 - 3)
             - 纸盒1
@@ -100,7 +100,7 @@ multi_download     批量下载
             "status": 3,
             "errors": [0, 2, 8],
             "serial": "40636C6601XCH",
-            "papers": 796,
+            "paper_printed": 796,
             "supplies": {
                 "tray": [3, 0, 0],
                 "toner": 0,
@@ -157,7 +157,7 @@ multi_download     批量下载
         - `-1` 为照片打印机未找到或状态异常(附录中无)
      - `paper_remain` 剩余打印数量
      - `paper_printed` 已打印数量
-     - `serial_no` 打印机序列号
+     - `serial` 打印机序列号
 
 ```json
 {
@@ -172,7 +172,7 @@ multi_download     批量下载
             "status": 0,
             "paper_remain": 179,
             "paper_printed": 129,
-            "serial_no": "218699"
+            "serial": "218699"
         }
     }
 }
