@@ -57,8 +57,8 @@ multi_download     批量下载
     - `connedted` 是否连接
     - `normal` 是否可用
     - `printing` 是否正在打印
-    - `status` 当前状态 `0`正常 `1`其他（遇到错误） `2`状态未知 `3`空闲 `4`正在打印 `5`预热（处理打印队列或后台程序）
-    - `errors` 错误列表, 只有当`status`为 `1` 的时候才会有此字段
+    - `status` 当前状态 `0`正常 `1`忙 `2`离线 `3`故障 `4`设备未知
+    - `errors` 错误列表, 只有当`normal`为 `false` 的时候前端才会从此列表中取出错误进行展示
         - 格式为int数组
         - 错误列表:
             - 0:  `少纸`
@@ -131,9 +131,9 @@ multi_download     批量下载
             "connected": true,
             "normal": true,
             "printing": false,
-            "status": 3,
+            "status": 0,
             "serial": "40636C6601XCH",
-            "papers": 678,
+            "paper_printed": 678,
             "supplies": {
                 "tray": [3, 0, 0],
                 "toner": 0,
@@ -153,8 +153,10 @@ multi_download     批量下载
 - 返回
      - `connedted` 是否连接
      - `normal` 是否可用
-     - `status` 当前错误状态 `int`, 查看`附录1照片打印机错误列表`
-        - `-1` 为照片打印机未找到或状态异常(附录中无)
+     - `status` 当前状态 `0`正常 `1`忙 `2`离线 `3`故障 `4`设备未知
+     - `errors` 当前错误状态
+         - 格式为int数组
+         - 查看`附录1照片打印机错误列表`
      - `paper_remain` 剩余打印数量
      - `paper_printed` 已打印数量
      - `serial` 打印机序列号
@@ -170,6 +172,7 @@ multi_download     批量下载
             "connected": true,
             "normal": true,
             "status": 0,
+            "errors": [0],
             "paper_remain": 179,
             "paper_printed": 129,
             "serial": "218699"
@@ -201,3 +204,5 @@ multi_download     批量下载
 
 ### 附录1照片打印机错误列表
 [下载](Errors.pdf)
+
+
