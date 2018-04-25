@@ -19,6 +19,24 @@ multi_download     批量下载
 - `errcode` 错误代码
 - `message` 详细信息
 
+### 终端维护URL
+```json
+{event: "qrcode", data: ""}
+```
+
+- 成功
+```json
+{
+    "event": "qrcode",
+    "status": "ok",
+    "data": {
+        "errcode": 0,
+        "message": "ok",
+        "data": "https://backend.yinwow.com/terminal/init?token=065f3c67-e591-4a49-9d25-8490be5098f5"
+    }
+}
+```
+
 ### 下载文件
 - 不同的文件之间需要使用回车`\n`隔开
 ```json
