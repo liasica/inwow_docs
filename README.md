@@ -21,7 +21,7 @@ multi_download     批量下载
 
 ### 终端维护URL
 ```json
-{event: "qrcode", data: ""}
+{"event": "qrcode", "data": ""}
 ```
 
 - 成功
